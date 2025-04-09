@@ -4,21 +4,12 @@ import os
 from prettytable import PrettyTable  # library to create table format
 
 season_ = 2025
-round_ = 2  # how many races have been?
+round_ = 3  # how many races have been?
 sprint_round_ = 1  # how many sprints have been?
 total_races = 24
 total_sprints = 6
 
-# CACHE FOLDER TO SPEED UP PROGRAM
-cache_folder = 'cache folder'
-if not os.path.exists(cache_folder):
-    os.makedirs(cache_folder)
-
-fastf1.Cache.enable_cache(cache_folder)
-
 ergast = Ergast()  # ACCESS CURRENT CHAMPIONSHIP STANDINGS DATA
-
-print('successfully loaded data')
 
 current_driver_standings = ergast.get_driver_standings(season=season_,
                                                        round=round_)  # GET THE CURRENT DRIVER STANDINGS DATA
